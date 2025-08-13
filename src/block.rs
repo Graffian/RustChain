@@ -11,6 +11,7 @@ pub struct Block{
     pub data : String,
     pub previous_hash : String,
     pub current_hash : String
+    
 }
 
 impl Block{

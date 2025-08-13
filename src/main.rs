@@ -1,10 +1,10 @@
 // Create a CLI app in Rust that lets you add blocks, print the chain, and stores data on disk.
 
+
 use tokio::net::TcpListener;
 use std::{ io::{self, Write}};
 pub mod block;
 use block::Block;
-
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
 
 #[tokio::main]
@@ -44,7 +44,6 @@ async fn main(){
                 io::stdin().read_line(&mut block_data).unwrap();
                 let genesis_block = Block::new(block_data.clone());
                 blockchain.push(genesis_block);
-                
             }else{
                 print!("What data you want to enter in block: ");
                 io::stdout().flush().unwrap();
